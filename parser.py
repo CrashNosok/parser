@@ -1,5 +1,8 @@
 import requests
 from bs4 import BeautifulSoup as BS
+from datetime import datetime
+
+start_time = datetime.now()
 
 # url1 = 'https://stopgame.ru/review/new/stopchoice/p1'
 # url2 = 'https://stopgame.ru/review/new/stopchoice/p2'
@@ -35,3 +38,4 @@ for r in pages:
         # выводим название статьи
         print(i, title[0].text)
         i += 1
+print('Время выполнения:', (datetime.now() - start_time))

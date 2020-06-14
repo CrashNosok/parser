@@ -1,6 +1,8 @@
 import requests
 from bs4 import BeautifulSoup as BS
+from datetime import datetime
 
+start_time = datetime.now()
 # email
 # login: kakoetoimya90@mail.ru
 # password: Plovchik90
@@ -41,4 +43,5 @@ anw_bs = BS(asnw.content, 'html.parser')
 print('Имя: ' + anw_bs.select('.user-menu__name')[0].text.strip())
 print('Уровень: ' + anw_bs.select('.user-menu__info-text--lvl')[0].text.strip())
 print('Опыт: ' + anw_bs.select('.user-menu__info-text--exp')[0].text.strip())
+print('Время выполнения:', (datetime.now() - start_time))
 
